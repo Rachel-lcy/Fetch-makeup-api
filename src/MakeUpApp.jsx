@@ -36,20 +36,20 @@ const MakeUpApp = () =>{
 
   return(
     <div>
-      <h1>Makeup Products Showcase</h1>
-      <label htmlFor="brand-select">Filter By Brand: </label>
-      <select
+      <h1 className="bg-red-400 text-3xl">Makeup Products Showcase</h1>
+      <label htmlFor="brand-select" className="text-green-600">Filter By Brand: </label>
+      <select className="border-yellow-300"
         id="brand-select"
         value={selectedBrand}
         onChange ={(e) => setSelectedBrand(e.target.value)}
       >
-        <option>All brands</option>
+        <option className="bg-yellow-300">All brands</option>
         {brand.map((brand) => (
           <option key={brand} value={brand}> {brand} </option>
         ))}
       </select>
 
-      <button onClick={fetchMakeUpApi} > Choose Products</button>
+      <button onClick={fetchMakeUpApi} className="border-r-8 border-green-800"> Choose Products</button>
       <div>
         {filteredProducts.map((product) => (
           <div key={product.id}>
